@@ -52,6 +52,12 @@ class ControllerModuleRees46 extends Controller {
 				'button_cancel',
 				'button_add_module',
 				'button_remove',
+
+				'shop_id',
+				'shop_secret',
+
+				'module_description',
+
 				'entry_example' //this is an example extra field added
 		);
 		

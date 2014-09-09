@@ -24,6 +24,12 @@ $_['rees46_example'] = 'Example Extra Text';
 $_['heading_title']    = 'REES46';
 
 
+$_['shop_id'] = 'Код магазина';
+$_['shop_secret'] = 'Секретный ключ магазина';
+
+$_['module_description'] = 'Бла-бла-бла <a href="http://rees46.com">REES46</a>';
+
+
 // Text
 $_['text_module']      = 'Modules';
 $_['text_success']     = 'Success: You have modified module My Module!';
