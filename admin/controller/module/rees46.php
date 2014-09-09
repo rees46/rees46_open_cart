@@ -5,6 +5,8 @@
 class ControllerModuleRees46 extends Controller {
 	
 	private $error = array(); 
+
+	public $settings;
 	
 	public function index() {   
 		//Load the language file for this module
@@ -15,6 +17,8 @@ class ControllerModuleRees46 extends Controller {
 		
 		//Load the settings model. You can also add any other models you want to load here.
 		$this->load->model('setting/setting');
+
+		$this->settings = $this->model_setting_setting->getSetting('rees46');
 		
 		//Save the settings if the user has submitted the admin form (ie if someone has pressed save).
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {

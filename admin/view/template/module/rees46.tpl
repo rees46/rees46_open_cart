@@ -19,12 +19,12 @@
       <table class="form">
         <tr>
           <td><?php echo $shop_id; ?></td>
-          <td><input type="text" name="rees46_shop_id"></td>
+          <td><input type="text" name="rees46_shop_id" value="<?php echo $this->settings['rees46_shop_id']; ?>"></td>
         </tr>
 
         <tr>
           <td><?php echo $shop_secret; ?></td>
-          <td><input type="text" name="rees46_shop_secret"></td>
+          <td><input type="text" name="rees46_shop_secret" value="<?php echo $this->settings['rees46_shop_secret']; ?>"></td>
         </tr>
       </table>
     </form>
