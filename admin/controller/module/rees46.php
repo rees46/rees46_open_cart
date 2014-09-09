@@ -2,7 +2,7 @@
 ################################################################################################
 #  DIY Module Builder for Opencart 1.5.1.x From HostJars http://opencart.hostjars.com  		   #
 ################################################################################################
-class ControllerModuleMyModule extends Controller {
+class ControllerModuleRees46 extends Controller {
 	
 	private $error = array(); 
 	

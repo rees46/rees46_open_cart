@@ -19,6 +19,7 @@ rm ~/Sites/catalog/language/russian/module/rees46.php
 echo "Installing new files"
 
 # Admin
+mkdir ~/Sites/admin/model/module
 cp admin/model/module/rees46.php ~/Sites/admin/model/module/rees46.php
 cp admin/view/template/module/rees46.tpl ~/Sites/admin/view/template/module/rees46.tpl
 cp admin/controller/module/rees46.php ~/Sites/admin/controller/module/rees46.php
@@ -26,6 +27,7 @@ cp admin/language/english/module/rees46.php ~/Sites/admin/language/english/modul
 cp admin/language/russian/module/rees46.php ~/Sites/admin/language/russian/module/rees46.php
 
 # Catalog
+mkdir ~/Sites/catalog/model/module
 cp catalog/model/module/rees46.php ~/Sites/catalog/model/module/rees46.php
 cp catalog/view/theme/default/template/module/rees46.tpl ~/Sites/catalog/view/theme/default/template/module/rees46.tpl
 cp catalog/controller/module/rees46.php ~/Sites/catalog/controller/module/rees46.php

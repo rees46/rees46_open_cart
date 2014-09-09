@@ -2,7 +2,7 @@
 ################################################################################################
 #  DIY Module Builder for Opencart 1.5.1.x From HostJars http://opencart.hostjars.com    	   #
 ################################################################################################
-class ModelModuleMyModule extends Model {
+class ModelModuleRees46 extends Model {
 	
 	/*
 	 * Most modules do not require their own database access. If you do want to store some new data that doesn't fit into the existing

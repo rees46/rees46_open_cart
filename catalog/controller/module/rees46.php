@@ -4,7 +4,7 @@
 ################################################################################################
 ?><?php
 
-class ControllerModuleMyModule extends Controller {
+class ControllerModuleRees46 extends Controller {
 	protected function index() {
 		//Load the language file for this module - catalog/language/module/rees46.php
 		$this->language->load('module/rees46');

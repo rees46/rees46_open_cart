@@ -2,7 +2,7 @@
 ################################################################################################
 #  DIY Module Builder for Opencart 1.5.1.x From HostJars http://opencart.hostjars.com 		   #
 ################################################################################################
-class ModelModuleMyModule extends Model {
+class ModelModuleRees46 extends Model {
 	
 	//Place any functions you like in here to access the DB and present data to the controller to display or otherwise
 	//control the display of the view. Before writing your own functions here, check to see if you can use functions

@@ -21,7 +21,7 @@ $_['rees46_example'] = 'Example Extra Text';
 
 
 // Heading Goes here:
-$_['heading_title']    = 'My Module';
+$_['heading_title']    = 'REES46';
 
 
 // Text
