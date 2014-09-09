@@ -15,8 +15,8 @@
  * 
  */
 
-// Example field added (see related part in admin/controller/module/my_module.php)
-$_['my_module_example'] = 'Example Extra Text';
+// Example field added (see related part in admin/controller/module/rees46.php)
+$_['rees46_example'] = 'Example Extra Text';
 
 
 

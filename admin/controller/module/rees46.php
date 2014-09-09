@@ -8,7 +8,7 @@ class ControllerModuleMyModule extends Controller {
 	
 	public function index() {   
 		//Load the language file for this module
-		$this->load->language('module/my_module');
+		$this->load->language('module/rees46');
 
 		//Set the title from the language file $_['heading_title'] string
 		$this->document->setTitle($this->language->get('heading_title'));
@@ -18,7 +18,7 @@ class ControllerModuleMyModule extends Controller {
 		
 		//Save the settings if the user has submitted the admin form (ie if someone has pressed save).
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-			$this->model_setting_setting->editSetting('my_module', $this->request->post);		
+			$this->model_setting_setting->editSetting('rees46', $this->request->post);		
 					
 			$this->session->data['success'] = $this->language->get('text_success');
 						
@@ -31,7 +31,7 @@ class ControllerModuleMyModule extends Controller {
 		// then just add an extra line to the $text_strings array with the name you want to call the extra text,
 		// then add the same named item to the $_[] array in the language file.
 		//
-		// 'my_module_example' is added here as an example of how to add - see admin/language/english/module/my_module.php for the
+		// 'rees46_example' is added here as an example of how to add - see admin/language/english/module/rees46.php for the
 		// other required part.
 		
 		$text_strings = array(
@@ -64,10 +64,10 @@ class ControllerModuleMyModule extends Controller {
 		//submitted data (when the user presses save in admin). Add any extra config data
 		// you want to store.
 		//
-		// NOTE: These must have the same names as the form data in your my_module.tpl file
+		// NOTE: These must have the same names as the form data in your rees46.tpl file
 		//
 		$config_data = array(
-				'my_module_example' //this becomes available in our view by the foreach loop just below.
+				'rees46_example' //this becomes available in our view by the foreach loop just below.
 		);
 		
 		foreach ($config_data as $conf) {
@@ -102,11 +102,11 @@ class ControllerModuleMyModule extends Controller {
 		
    		$this->data['breadcrumbs'][] = array(
        		'text'      => $this->language->get('heading_title'),
-			'href'      => $this->url->link('module/my_module', 'token=' . $this->session->data['token'], 'SSL'),
+			'href'      => $this->url->link('module/rees46', 'token=' . $this->session->data['token'], 'SSL'),
       		'separator' => ' :: '
    		);
 		
-		$this->data['action'] = $this->url->link('module/my_module', 'token=' . $this->session->data['token'], 'SSL');
+		$this->data['action'] = $this->url->link('module/rees46', 'token=' . $this->session->data['token'], 'SSL');
 		
 		$this->data['cancel'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
 
@@ -114,10 +114,10 @@ class ControllerModuleMyModule extends Controller {
 		//This code handles the situation where you have multiple instances of this module, for different layouts.
 		$this->data['modules'] = array();
 		
-		if (isset($this->request->post['my_module_module'])) {
-			$this->data['modules'] = $this->request->post['my_module_module'];
-		} elseif ($this->config->get('my_module_module')) { 
-			$this->data['modules'] = $this->config->get('my_module_module');
+		if (isset($this->request->post['rees46_module'])) {
+			$this->data['modules'] = $this->request->post['rees46_module'];
+		} elseif ($this->config->get('rees46_module')) { 
+			$this->data['modules'] = $this->config->get('rees46_module');
 		}		
 
 		$this->load->model('design/layout');
@@ -125,7 +125,7 @@ class ControllerModuleMyModule extends Controller {
 		$this->data['layouts'] = $this->model_design_layout->getLayouts();
 
 		//Choose which template file will be used to display this request.
-		$this->template = 'module/my_module.tpl';
+		$this->template = 'module/rees46.tpl';
 		$this->children = array(
 			'common/header',
 			'common/footer',
@@ -142,7 +142,7 @@ class ControllerModuleMyModule extends Controller {
 	 * 
 	 */
 	private function validate() {
-		if (!$this->user->hasPermission('modify', 'module/my_module')) {
+		if (!$this->user->hasPermission('modify', 'module/rees46')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 		
