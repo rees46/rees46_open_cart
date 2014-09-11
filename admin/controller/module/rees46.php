@@ -19,6 +19,10 @@ class ControllerModuleRees46 extends Controller {
 		$this->load->model('setting/setting');
 
 		$this->settings = $this->model_setting_setting->getSetting('rees46');
+
+		if (!$this->settings) {
+			$this->settings = array('rees46_shop_id' => '', 'rees46_shop_secret' => '');
+		}
 		
 		//Save the settings if the user has submitted the admin form (ie if someone has pressed save).
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
@@ -130,9 +134,12 @@ class ControllerModuleRees46 extends Controller {
 			$this->data['modules'] = $this->config->get('rees46_module');
 		}		
 
-		$this->load->model('design/layout');
 		
+
+		$this->load->model('design/layout');
 		$this->data['layouts'] = $this->model_design_layout->getLayouts();
+
+		$this->data['types'] = array('Инициализация', 'Похожие товары', 'Возможно, вам будет интересно');
 
 		//Choose which template file will be used to display this request.
 		$this->template = 'module/rees46.tpl';
