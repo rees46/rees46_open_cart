@@ -17,8 +17,7 @@
       echo ('['.implode(',', $categories).']');
     ?>,
     name:        '<?php echo trim(preg_replace('/\s+/', ' ', strip_tags(html_entity_decode($heading_title, ENT_QUOTES, 'UTF-8')))); ?>',
-    description: '<?php echo trim(preg_replace('/\s+/', ' ', strip_tags(html_entity_decode($description, ENT_QUOTES, 'UTF-8')))); ?>',
-    url:         '<?php echo $product['href']; ?>',
+    url:         '<?php echo $this->$data['product']['href']; ?>',
     image_url:   '<?php echo $popup; ?>'
   };
 </script>
