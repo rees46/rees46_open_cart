@@ -1,16 +1,22 @@
 <!-- Insert before </body> -->
 <!-- REES46 Init Begin -->
 <script src="//cdn.rees46.com/rees46_script2.js"></script>
-<link href="//rees46.com/shop_css/ac61a375059f03dca081f4632cad4f" media="all" rel="stylesheet" />
 <script type="text/javascript">
   var REES46Info = {
-    shopId: 'ac61a375059f03dca081f4632cad4f',
+    shopId: 'КОД_ВАШЕГО_МАГАЗИНА_В_REES46',
     currentUserId: <?php
       $current_user_id = $this->customer->getId();
       if (!$current_user_id) {
         $current_user_id = 'null';
       }
       echo $current_user_id;
+    ?>,
+    currentUserEmail: <?php
+      $current_user_email = $this->customer->getEmail();
+      if (!$current_user_email) {
+        $current_user_email = 'null';
+      }
+      echo $current_user_email;
     ?>
   };
 
@@ -34,7 +40,9 @@
     echo "[".implode(',', $cart_ids)."]";
   ?>;
 
-  REES46.init(REES46Info.shopId, REES46Info.currentUserId, function() {
+  REES46.init(REES46Info.shopId, { id: REES46Info.currentUserId, email: REES46Info.currentUserEmail }, function() {
+    REES46.addStyleToPage();
+
     if (typeof(REES46CurrentProductInfo) != 'undefined') {
       REES46.pushData('view', REES46CurrentProductInfo);
     }
@@ -88,13 +96,21 @@
                      '</div>';
 
           var productsBlock = '';
-          
+
           response = JSON.parse(response);
 
           $(response).each(function() {
             if (this.name != '') {
+              var linkToItem = this.url;
+              if (linkToItem.indexOf('?') >= 0) {
+                linkToItem = linkToItem + '&';
+              } else {
+                linkToItem = linkToItem + '?';
+              }
+              linkToItem = linkToItem + 'recommended_by=' + recommenderType;
+
               productsBlock += tplItem.format(
-                this.url + '&recommended_by=' + recommenderType,
+                linkToItem,
                 this.name,
                 this.image_url,
                 this.price
