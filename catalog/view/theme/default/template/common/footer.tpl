@@ -105,7 +105,11 @@
               if (linkToItem.indexOf('?') >= 0) {
                 linkToItem = linkToItem + '&';
               } else {
-                linkToItem = linkToItem + '?';
+                if (linkToItem.indexOf('.htm') >= 0) {
+                  linkToItem = linkToItem + '#?';
+                } else {
+                  linkToItem = linkToItem + '?';
+                }
               }
               linkToItem = linkToItem + 'recommended_by=' + recommenderType;
 
