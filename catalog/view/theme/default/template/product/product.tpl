@@ -3,9 +3,15 @@
 <script type="text/javascript">
   var REES46CurrentProductInfo = {
     item_id:      <?php echo $product_id; ?>,
-    price:        <?php echo preg_replace('/[^0-9.+]/', '', $price); ?>,
+    price:        <?php
+      if ($special) {
+        echo preg_replace('/[^0-9.+]/', '', $special);
+      } else {
+        echo preg_replace('/[^0-9.+]/', '', $price);
+      }
+    ?>,
     is_available: <?php echo 'true'; ?>,
-    categories:   <?php 
+    categories:   <?php
       $categories = array();
 
       $product_categories = $this->model_catalog_product->getCategories($product_id);
