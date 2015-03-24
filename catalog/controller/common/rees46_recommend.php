@@ -18,9 +18,16 @@ class ControllerCommonRees46Recommend extends Controller {
             $image = $this->model_tool_image->resize('no_image.jpg', $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
           }
 
+          $price = null;
+          if (($product['special']) && ($product['special'] != '')) {
+            $price = $product['special'];
+          } else {
+            $price = $product['price'];
+          }
+
           $rees46_product = array(
             'name' => $product['name'],
-            'price' => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'))),
+            'price' => $this->currency->format($this->tax->calculate($price, $product['tax_class_id'], $this->config->get('config_tax'))),
             'url' => $this->url->link('product/product', 'product_id=' . $product['product_id']),
             'image_url' => $image
           );
@@ -32,6 +39,6 @@ class ControllerCommonRees46Recommend extends Controller {
 
     header('Content-Type: application/json');
     $this->response->setOutput(json_encode($products));
-  } 
+  }
 }
 ?>
