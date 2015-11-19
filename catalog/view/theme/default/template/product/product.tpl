@@ -10,7 +10,7 @@
         echo preg_replace('/[^0-9.+]/', '', $price);
       }
     ?>,
-    is_available: <?php echo 'true'; ?>,
+    is_available: <?php if (isset($rees46_is_available) && $rees46_is_available>0) { echo 'true'; } else { echo 'false'; }; ?>,
     categories:   <?php
       $categories = array();
 
