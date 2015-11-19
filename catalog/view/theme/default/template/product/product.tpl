@@ -19,7 +19,7 @@
       foreach ($product_categories as $product_category) {
         array_push($categories, $product_category['category_id']);
       }
-
+ 
       echo ('['.implode(',', $categories).']');
     ?>,
     name:        '<?php echo trim(preg_replace('/\s+/', ' ', strip_tags(html_entity_decode($heading_title, ENT_QUOTES, 'UTF-8')))); ?>',
